@@ -1,0 +1,11 @@
+<h1>Bonus: simple example of SSE sending data every 1 second</h1>
+<script type="text/javascript">
+  const eventSource = new EventSource('/sse');
+  eventSource.onmessage = ({ data }) => {
+    // This will display the data content in the web page as a sample
+    // The kind of data that <Chart /> component would use for real time refresh
+    const message = document.createElement('li');
+    message.innerText = 'New message: ' + data;
+    document.body.appendChild(message);
+  }
+</script>
